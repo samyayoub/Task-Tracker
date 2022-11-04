@@ -1,8 +1,13 @@
-/* Main Blue Color: #ABD7FF */
+/* 
+Main Colors:
+Blue Color: #ABD7FF 
+Wine: #732C2C;
+*/
 
 body  {
   margin: 0;
   padding: 0;
+  font-family: 'Signika Negative', sans-serif;
 }
 
 h3  {
@@ -13,6 +18,7 @@ h3  {
 .Navbar {
   height: auto;
   box-shadow: 0px 2px 5px rgb(190, 190, 190);
+  display: flex;
 }
 
 .iconContainer  {
@@ -20,11 +26,31 @@ h3  {
   height: 50px;
   box-shadow: 2px 0px 5px rgb(190, 190, 190);
   position: relative;
+  margin-right: 25px;
 }
+
 .iconImages {
-  margin: 0;
   position: absolute;
+  margin: 0;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.trackContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.trackText  {
+  color: #732C2C;
+  text-align: center;
+  font-size: 45px;
+}
+
+.addButton  {
+  width: 45vw;
 }
