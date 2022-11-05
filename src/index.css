@@ -58,6 +58,7 @@ h3  {
   color: #732C2C;
   text-align: center;
   font-size: 45px;
+  font-weight: 700;
   margin-bottom: 2%;
 }
 
@@ -86,4 +87,13 @@ h3  {
   border-radius: 25px;
   /* box-shadow: 3px 3px 6px rgb(190, 190, 190); */
   width:90% !important; top: 5%;
+}
+
+.modalBody  {
+  font-size: large;
+  font-weight: 700;
+}
+
+.form-label, p  {
+  padding-top: 5%;
 }

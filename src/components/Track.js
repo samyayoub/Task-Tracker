@@ -2,6 +2,7 @@ import addTaskBtn from '../img/addTaskBtn.svg'
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import {Form} from 'react-bootstrap';
 
 export default function Track() {
 
@@ -9,6 +10,7 @@ export default function Track() {
 
     const handleClose = () => setShow(false);
 
+ 
     return (
         <>
             <div className="trackContainer">
@@ -33,12 +35,22 @@ export default function Track() {
                     <Modal.Title>Modal title</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="modalBody">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean volutpat leo sem, nec commodo dui convallis non. Sed eget posuere mauris. Vestibulum non nunc ut metus pellentesque rhoncus vitae vitae erat. Pellentesque quis lobortis eros, a blandit lacus. Sed dolor tellus, sagittis vel egestas a, viverra non magna. Nullam quis libero laoreet, feugiat metus in, ornare odio. Aenean odio sem, fringilla et leo eget, pharetra ornare velit. Ut scelerisque sapien ac viverra faucibus.
+                    <div className="row">
+                        <div className="col-md-4">
+                            <Form.Group controlId="taskDate">
+                                <Form.Label>Select Date</Form.Label>
+                                <Form.Control type="date" name="taskDate" placeholder="Date of Task" />
+                            </Form.Group>
+                        </div>
+                        <div>
+                            <p>Select Tags</p>
+                        </div>
+                    </div>
                 </Modal.Body>
                 <Modal.Footer>
                     <div>
                         <Button variant="outline-success" onClick={handleClose} className="closeModalButton">
-                            Close
+                            Add Task
                         </Button>
                     </div>
                 </Modal.Footer>
