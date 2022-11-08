@@ -17,14 +17,28 @@ export default function Track() {
 
     const [show, setShow] = useState(false);
     const [task, setTask] = useState({
-        duration: "15",
+        duration: 15,
         tag: "Creative Content Creating"
     })
 
     const handleClose = () => setShow(false);
 
-    function test() {
-        console.log("clicked")
+    function subtract15Minutes() {
+        setTask((prevTask) => {
+            return {...prevTask, duration: prevTask.duration - 15}
+        })
+        console.log(task.duration)
+    }
+
+    function add15Minutes() {
+        setTask((prevTask) => {
+            return {...prevTask, duration: prevTask.duration + 15}
+        })
+        console.log(task.duration)
+    }
+
+    function differentTags()    {
+        alert("CCC")
     }
 
     return (
@@ -53,44 +67,44 @@ export default function Track() {
                 </Modal.Header>
                 <Modal.Body className="modalBody mx-auto">
                     <Container>
-                        <Row>
-                            <Col>
-                                <div className="col-md-4 mx-auto">
+                        <Row className="align-items-center rowModal">
+                            <Col className="columnModal">
+                                <div className="col-md-8 mx-auto">
                                     <Form.Group controlId="taskDate">
                                         <Form.Label class="modalTxt">Select Date</Form.Label>
                                         <Form.Control type="date" name="taskDate" placeholder="Date of Task" />
                                     </Form.Group>
                                 </div>
                             </Col>
-                            <Col>
+                            <Col className="columnModal">
                                 <div className="mx-auto">
-                                    <p class="modalTxt">Select Tags</p>
-                                    <ul>
-                                        <li>
-                                            {task.duration}
-                                        </li>
-                                        <li>
-                                            {task.tag}
-                                        </li>
+                                    <p className="modalTxt">Select Tag</p>
+                                    <ul className="listTags">
+                                        <button className="tagsBtns" onClick={differentTags}>
+                                            <li className="listTagsLi">
+                                                <img src={addTaskBtn} alt="Add Tag Button" className="addTagSymbol"/>
+                                                {task.tag}
+                                            </li>
+                                        </button>
                                     </ul>
                                 </div>
                             </Col>
                         </Row>
-                        <Container fluid="sm" className="mx-auto">
+                        <Container fluid="sm" className="mx-auto containerModal">
                             <div className="mx-auto">
                                 <p class="modalTxt" id="durationTxt">Select Duration</p>
-                                <Row className="align-items-center">
+                                <Row className="align-items-center rowModal">
                                     <Col xs={true}>
-                                        <button className="addAndSubtractTimeBtn" variant="light" onClick={test}>
-                                            <img src={addButton} alt="" />
+                                        <button className="addAndSubtractTimeBtn" variant="light" onClick={subtract15Minutes}>
+                                            <img src={subtractButton} alt="" />
                                         </button>
                                     </Col>
                                     <Col xs={true}>
-                                        <p>15 minutes</p>
+                                        <p>{task.duration} minutes</p>
                                     </Col>
                                     <Col xs={true}>
-                                        <button className="addAndSubtractTimeBtn" variant="light" onClick={test}>
-                                            <img src={subtractButton} alt="" />
+                                        <button className="addAndSubtractTimeBtn" variant="light" onClick={add15Minutes}>
+                                            <img src={addButton} alt="" />
                                         </button>
                                     </Col>
                                 </Row>

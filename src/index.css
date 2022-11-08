@@ -65,7 +65,7 @@ h3  {
 }
 
 .addTaskBtn  {
-  width: 45vw;
+  width: 50vh;
   cursor: pointer;
   background-color: white;
   border-radius: 50%;
@@ -93,6 +93,7 @@ h3  {
 .modalBody  {
   font-size: large;
   font-weight: 700;
+  width: 90%;
 }
 
 .modalTitle {
@@ -128,4 +129,34 @@ h3  {
 #durationTxt  {
   margin-bottom: 0;
   padding: 0.25em;
+}
+
+.listTags {
+  list-style: none;
+  padding-left: 0;
+}
+
+.addTagSymbol  {
+  width: 30px;
+  margin-right: 1em;
+}
+
+.listTagsLi {
+  font-weight: 400;
+}
+
+.tagsBtns {
+  border: none;
+  background-color: white;
+}
+
+.columnModal  {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rowModal {
+  margin-bottom: 5em;
 }
