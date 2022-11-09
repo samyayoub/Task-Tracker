@@ -160,3 +160,23 @@ h3  {
 .rowModal {
   margin-bottom: 5em;
 }
+
+.tagBtnWithText {
+  display: inline-block;
+  /* width: 30px; */
+  margin-right: 1em;
+  height: 30px;
+}
+
+.tagContainer {
+  margin: 0.25em;
+  margin-bottom: 0.5em;
+  padding: 0.25em;
+  border-radius: 25px;
+  display: block;
+  text-align: center;
+}
+
+.tagContainer:hover {
+  background-color: #E8C547;
+}

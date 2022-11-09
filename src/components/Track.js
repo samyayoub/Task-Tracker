@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import SelectTag from './SelectTag';
+import ListOfTags from './ListOfTags';
 
 // Import items for Bootstrap
 import Button from 'react-bootstrap/Button';
@@ -18,7 +20,7 @@ export default function Track() {
     const [show, setShow] = useState(false);
     const [task, setTask] = useState({
         duration: 15,
-        tag: "Creative Content Creating"
+        tag: ""
     })
 
     const handleClose = () => setShow(false);
@@ -37,8 +39,15 @@ export default function Track() {
         console.log(task.duration)
     }
 
-    function differentTags()    {
-        alert("CCC")
+    const tmpArrayOfTags = ["Studying", "Creative Content Creating", "Playing"];
+    const listTags = tmpArrayOfTags.map(oneTask => (
+        <ListOfTags value={oneTask} />
+    ))
+
+    function handleClick() {
+        return (
+            alert("alert")
+        )
     }
 
     return (
@@ -80,10 +89,9 @@ export default function Track() {
                                 <div className="mx-auto">
                                     <p className="modalTxt">Select Tag</p>
                                     <ul className="listTags">
-                                        <button className="tagsBtns" onClick={differentTags}>
+                                        <button className="tagsBtns" onClick={handleClick} type="button">
                                             <li className="listTagsLi">
-                                                <img src={addTaskBtn} alt="Add Tag Button" className="addTagSymbol"/>
-                                                {task.tag}
+                                                {listTags}
                                             </li>
                                         </button>
                                     </ul>
@@ -96,7 +104,7 @@ export default function Track() {
                                 <Row className="align-items-center rowModal">
                                     <Col xs={true}>
                                         <button className="addAndSubtractTimeBtn" variant="light" onClick={subtract15Minutes}>
-                                            <img src={subtractButton} alt="" />
+                                            <img src={subtractButton} alt="Subtract Time" />
                                         </button>
                                     </Col>
                                     <Col xs={true}>
@@ -104,7 +112,7 @@ export default function Track() {
                                     </Col>
                                     <Col xs={true}>
                                         <button className="addAndSubtractTimeBtn" variant="light" onClick={add15Minutes}>
-                                            <img src={addButton} alt="" />
+                                            <img src={addButton} alt="Add Time" />
                                         </button>
                                     </Col>
                                 </Row>
