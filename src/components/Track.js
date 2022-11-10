@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import SelectTag from './SelectTag';
 import ListOfTags from './ListOfTags';
 
 // Import items for Bootstrap
