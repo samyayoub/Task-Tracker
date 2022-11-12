@@ -13,6 +13,10 @@ body  {
   font-family: 'Signika Negative', sans-serif;
 }
 
+.white-content {
+  background: white;
+}
+
 h3  {
   margin: 0;
 }
@@ -26,10 +30,10 @@ h3  {
 }
 
 .iconContainer  {
+  position: relative;
   width: 50px;
   height: 50px;
   box-shadow: 2px 0px 5px rgb(190, 190, 190);
-  position: relative;
   margin-right: 25px;
 }
 
@@ -38,6 +42,32 @@ h3  {
   margin: 0;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lightDarkContainer {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  box-shadow: 2px 0px 5px rgb(190, 190, 190);
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/* .lightDarkIconImages  {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+.lightDarkIconImages  {
+  position: absolute;
+  width: auto;
+  height: 25px;
+  top: 50%;
+  padding: auto;
   transform: translate(-50%, -50%);
 }
 
@@ -180,3 +210,4 @@ h3  {
 .tagContainer:hover {
   background-color: #E8C547;
 }
+
