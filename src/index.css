@@ -13,6 +13,16 @@ body  {
   font-family: 'Signika Negative', sans-serif;
 }
 
+.darkTheme  {
+  background-color: #121212;
+  color: #F5F5F5;
+}
+
+.lightTheme {
+  background-color: #F5F5F5;
+  color: #732C2C;
+}
+
 h3  {
   margin: 0;
 }
@@ -23,11 +33,15 @@ h3  {
   box-shadow: 0px 2px 5px rgb(190, 190, 190);
   display: flex;
   margin-bottom: 2.5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  justify-content: space-evenly;
 }
 
 .iconContainer  {
   width: 50px;
   height: 50px;
+  border-radius: 50%;
   box-shadow: 2px 0px 5px rgb(190, 190, 190);
   position: relative;
   margin-right: 25px;
@@ -39,6 +53,30 @@ h3  {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.themeIconContainer  {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin-right: 25px;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px rgb(190, 190, 190);
+}
+
+.themeIconImages {
+  position: absolute;
+  width: 40px;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.themeIconContainer:hover  {
+  transform: scale(1.20);
+  cursor: pointer;
 }
 
 /* Tracking Page Styling */
@@ -57,7 +95,6 @@ h3  {
 }
 
 .trackText  {
-  color: #732C2C;
   text-align: center;
   font-size: 45px;
   font-weight: 700;
@@ -67,7 +104,7 @@ h3  {
 .addTaskBtn  {
   width: 50vh;
   cursor: pointer;
-  background-color: white;
+  background-color: #F5F5F5;
   border-radius: 50%;
   transition-property: transform;
   transition-duration: 0.3s;
