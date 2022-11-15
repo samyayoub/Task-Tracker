@@ -56,7 +56,7 @@ export default function Track() {
                     Start Tracking your Next Task
                 </h1>
                 <button className="addTaskBtn" variant="primary" onClick={() => setShow(true)}>
-                    <img src={addTaskBtn} alt="" />
+                    <img src={addTaskBtn} alt="" id="bigBtn"/>
                 </button>
             </div>
 

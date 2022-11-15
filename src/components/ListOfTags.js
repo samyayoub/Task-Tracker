@@ -11,7 +11,7 @@ export default function ListOfTags(props)    {
         <div>
             <Container>
                 <Row>
-                    <Col className="tagContainer">
+                    <Col className="tagContainer" lg={true}>
                         <img src={addTaskBtn} alt="Add Tag Button" className="tagBtnWithText" />
                         <p className="tagBtnWithText">{props.value}</p>
                     </Col>

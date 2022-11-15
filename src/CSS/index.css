@@ -7,20 +7,40 @@ Main Colors:
   Shadow: rgb(190, 190, 190)
 */
 
+:root {
+  --babyBlueColor: #ABD7FF;
+  --wineColor: #732C2C;
+  --maineCrayolaColor: #E8C547;
+  --btnShadowColor: rgb(190, 190, 190);
+  --blackColor: #212121;
+  --whiteColor: white;
+}
+
+.lightTheme {
+  --backgroundColor: var(--whiteColor);
+  --txtColor: var(--wineColor);
+  --shadowColor: 3px 3px 3px var(var(--btnShadowColor));
+}
+
+.darkTheme  {
+  --backgroundColor: var(--blackColor);
+  --txtColor: var(--whiteColor);
+  --shadowColor: 3px 3px 3px var(var(--btnShadowColor));
+}
+
+* {
+  background: var(--backgroundColor);
+  transition: background-color 0.6s ease;
+}
+
 body  {
   margin: 0;
   padding: 0;
   font-family: 'Signika Negative', sans-serif;
 }
 
-.darkTheme  {
-  background-color: #121212;
-  color: #F5F5F5;
-}
-
-.lightTheme {
-  background-color: #F5F5F5;
-  color: #732C2C;
+main  {
+  height: 100vh;
 }
 
 h3  {
@@ -29,6 +49,7 @@ h3  {
 
 /* Navbar */
 .Navbar {
+  background-color: var(--backgroundColor);
   height: auto;
   box-shadow: 0px 2px 5px rgb(190, 190, 190);
   display: flex;
@@ -39,11 +60,12 @@ h3  {
 }
 
 .iconContainer  {
+  background-color: var(--backgroundColor);
+  position: relative;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  box-shadow: 2px 0px 5px rgb(190, 190, 190);
-  position: relative;
+  box-shadow: 2px 0px 5px var(--btnShadowColor);
   margin-right: 25px;
 }
 
@@ -55,14 +77,20 @@ h3  {
   transform: translate(-50%, -50%);
 }
 
+.iconContainer:hover  {
+  transform: scale(1.10);
+  cursor: pointer;
+}
+
 .themeIconContainer  {
+  background-color: var(--backgroundColor);
+  position: relative;
   width: 50px;
   height: 50px;
-  position: relative;
   margin-right: 25px;
   transition: all 0.2s ease;
   border-radius: 50%;
-  box-shadow: 0px 2px 5px rgb(190, 190, 190);
+  box-shadow: 0px 2px 5px var(--btnShadowColor);
 }
 
 .themeIconImages {
@@ -71,6 +99,7 @@ h3  {
   margin: 0;
   top: 50%;
   left: 50%;
+  border-radius: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -79,8 +108,13 @@ h3  {
   cursor: pointer;
 }
 
+#bigBtn {
+  border-radius: 50%;
+}
+
 /* Tracking Page Styling */
 .trackContainer {
+  background-color: var(--backgroundColor);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -95,6 +129,7 @@ h3  {
 }
 
 .trackText  {
+  color: var(--txtColor);
   text-align: center;
   font-size: 45px;
   font-weight: 700;
@@ -102,19 +137,19 @@ h3  {
 }
 
 .addTaskBtn  {
+  background-color: var(--backgroundColor);
   width: 50vh;
   cursor: pointer;
-  background-color: #F5F5F5;
   border-radius: 50%;
   transition-property: transform;
   transition-duration: 0.3s;
   margin: 2.5%;
-  border: 0 white;
+  border: 0 var(--whiteColor);
 }
 
 .addTaskBtn:hover  {
   transform: scale(1.1);
-  box-shadow: 7px 7px 6px rgb(190, 190, 190);
+  box-shadow: 7px 7px 6px var(--btnShadowColor);
 }
 
 /* Modal Styling */
@@ -124,10 +159,11 @@ h3  {
   padding: 2.5%;
   border-radius: 25px;
   width:90% !important; top: 5%;
-  color: #732C2C;
+  color: var(--txtColor);
 }
 
 .modalBody  {
+  background-color: var(--backgroundColor);
   font-size: large;
   font-weight: 700;
   width: 90%;
@@ -136,7 +172,7 @@ h3  {
 .modalTitle {
   font-size: large;
   font-weight: 700;
-  color: #732C2C;
+  color: var(--txtColor);
 }
 
 .form-label, p  {
@@ -156,11 +192,19 @@ h3  {
   margin: 0.25em;
   margin-bottom: 0.5em;
   padding: 0.25em;
-  background-color: rgba(179, 179, 179, 0.15);
+  background-color: var(--btnShadowColor);
   border-radius: 25px;
   display: block;
   text-align: center;
-  color: #732C2C;
+  color: var(--txtColor);
+}
+
+.modal-footer {
+  background-color: var(--backgroundColor);
+}
+
+.modal-content  {
+  background-color: var(--backgroundColor) !important;
 }
 
 #durationTxt  {
@@ -184,7 +228,7 @@ h3  {
 
 .tagsBtns {
   border: none;
-  background-color: white;
+  background-color: var(--backgroundColor);
 }
 
 .columnModal  {
@@ -200,18 +244,21 @@ h3  {
 
 .tagBtnWithText {
   display: inline-block;
-  /* width: 30px; */
+  /* background-color: var(--backgroundColor); */
+  color: var(--txtColor);
+  width: 1.5em;
   margin-right: 1em;
-  height: 30px;
+  height: auto;
 }
 
 .tagContainer {
+  display: block;
+  text-align: center;
+  width: auto;
   margin: 0.25em;
   margin-bottom: 0.5em;
   padding: 0.25em;
-  border-radius: 25px;
-  display: block;
-  text-align: center;
+  border-radius: 15px;
 }
 
 .tagContainer:hover {
