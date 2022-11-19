@@ -1,4 +1,4 @@
-import addTaskBtn from '../img/addTaskBtn.svg'
+import {Form} from 'react-bootstrap';
 
 // Import Bootstrap items
 import Container from 'react-bootstrap/Container';
@@ -7,16 +7,21 @@ import Col from 'react-bootstrap/Col';
 
 export default function ListOfTags(props)    {
 
-    return(
-        <div>
-            <Container>
-                <Row>
-                    <Col className="tagContainer" lg={true}>
-                        <img src={addTaskBtn} alt="Add Tag Button" className="tagBtnWithText" />
-                        <p className="tagBtnWithText">{props.value}</p>
-                    </Col>
-                </Row>
-            </Container>
-        </div>
+    const tmpTags = props.tags
+    return  (
+        <Form>
+            <p className="modalTxt">Select Tag</p>
+            {tmpTags.map((tag) => (
+                <div key={tag} className="mb-3 tagContainer tagBtnWithText">
+                    <Form.Check
+                        label={tag}
+                        name="tagGroup"
+                        type="radio"
+                        id={tag}
+                        className=""
+                    />
+                </div>
+            ))}
+      </Form>
     )
 }

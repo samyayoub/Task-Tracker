@@ -21,6 +21,7 @@ export default function Track() {
         duration: 15,
         tag: ""
     })
+    const [tags, setTags] = useState(["Studying", "Creative Content Creating", "Playing"])
 
     const handleClose = () => setShow(false);
 
@@ -28,26 +29,32 @@ export default function Track() {
         setTask((prevTask) => {
             return {...prevTask, duration: prevTask.duration - 15}
         })
-        console.log(task.duration)
     }
 
     function add15Minutes() {
         setTask((prevTask) => {
             return {...prevTask, duration: prevTask.duration + 15}
         })
-        console.log(task.duration)
     }
 
-    const tmpArrayOfTags = ["Studying", "Creative Content Creating", "Playing"];
-    const listTags = tmpArrayOfTags.map(oneTask => (
-        <ListOfTags value={oneTask} />
-    ))
+    // const tmpArrayOfTags = ["Studying", "Creative Content Creating", "Playing"];
+    // const listTags = tmpArrayOfTags.map(oneTask => (
+    //     <ListOfTags value={oneTask} />
+    // ))
 
     function handleClick() {
         return (
-            alert("alert")
+            console.log("handleClick")
         )
     }
+    
+    function handleAddTask() {
+        return (
+            console.log("handleAddTask")
+        )
+    }
+
+
 
     return (
         <>
@@ -55,7 +62,11 @@ export default function Track() {
                 <h1 className="trackText">
                     Start Tracking your Next Task
                 </h1>
-                <button className="addTaskBtn" variant="primary" onClick={() => setShow(true)}>
+                <button 
+                    className="addTaskBtn" 
+                    variant="primary" 
+                    onClick={() => setShow(true)}
+                >
                     <img src={addTaskBtn} alt="" id="bigBtn"/>
                 </button>
             </div>
@@ -71,7 +82,9 @@ export default function Track() {
                 centered="true"
             >
                 <Modal.Header className="modalTitle">
-                    <Modal.Title className="mx-auto">Start tracking your next task</Modal.Title>
+                    <Modal.Title className="mx-auto">
+                        Start tracking your next task
+                    </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="modalBody mx-auto">
                     <Container>
@@ -79,39 +92,62 @@ export default function Track() {
                             <Col className="columnModal">
                                 <div className="col-md-8 mx-auto">
                                     <Form.Group controlId="taskDate">
-                                        <Form.Label class="modalTxt">Select Date</Form.Label>
-                                        <Form.Control type="date" name="taskDate" placeholder="Date of Task" />
+                                        <Form.Label class="modalTxt">
+                                            Select Date
+                                        </Form.Label>
+                                        <Form.Control 
+                                            type="date" 
+                                            name="taskDate" 
+                                            placeholder="Date of Task" 
+                                        />
                                     </Form.Group>
                                 </div>
                             </Col>
                             <Col className="columnModal">
                                 <div className="mx-auto">
-                                    <p className="modalTxt">Select Tag</p>
-                                    <ul className="listTags">
-                                        <button className="tagsBtns" onClick={handleClick} type="button">
-                                            <li className="listTagsLi">
-                                                {listTags}
-                                            </li>
-                                        </button>
-                                    </ul>
+                                    <div 
+                                        className="tagsBtns listTags" 
+                                        onClick={handleClick}
+                                    >
+                                        <ListOfTags tags={tags}/>
+                                    </div>
                                 </div>
                             </Col>
                         </Row>
-                        <Container fluid="sm" className="mx-auto containerModal">
+                        <Container 
+                            fluid="sm" 
+                            className="mx-auto containerModal"
+                        >
                             <div className="mx-auto">
-                                <p class="modalTxt" id="durationTxt">Select Duration</p>
+                                <p class="modalTxt" id="durationTxt">
+                                    Select Duration
+                                </p>
                                 <Row className="align-items-center rowModal">
                                     <Col xs={true}>
-                                        <button className="addAndSubtractTimeBtn" variant="light" onClick={subtract15Minutes}>
-                                            <img src={subtractButton} alt="Subtract Time" />
+                                        <button 
+                                            className="addAndSubtractTimeBtn" 
+                                            variant="light" 
+                                            onClick={subtract15Minutes}
+                                        >
+                                            <img 
+                                                src={subtractButton} 
+                                                alt="Subtract Time" 
+                                            />
                                         </button>
                                     </Col>
                                     <Col xs={true}>
                                         <p>{task.duration} minutes</p>
                                     </Col>
                                     <Col xs={true}>
-                                        <button className="addAndSubtractTimeBtn" variant="light" onClick={add15Minutes}>
-                                            <img src={addButton} alt="Add Time" />
+                                        <button 
+                                            className="addAndSubtractTimeBtn" 
+                                            variant="light" 
+                                            onClick={add15Minutes}
+                                        >
+                                            <img 
+                                                src={addButton} 
+                                                alt="Add Time" 
+                                            />
                                         </button>
                                     </Col>
                                 </Row>
@@ -120,11 +156,29 @@ export default function Track() {
                     </Container>
                 </Modal.Body>
                 <Modal.Footer>
-                    <div>
-                        <Button variant="outline-success" onClick={handleClose} className="closeModalButton">
-                            Add Task
-                        </Button>
-                    </div>
+                    <Container fluid="sm">
+                        <Row>
+                            <Col className="text-center">
+                                <Button 
+                                    variant="outline-success" 
+                                    onClick={handleAddTask} 
+                                    className="closeModalButton" 
+                                    type="submit"
+                                >
+                                    Add Task
+                                </Button>
+                            </Col>
+                            <Col className="text-center">    
+                                <Button 
+                                    variant="outline-warning" 
+                                    onClick={handleClose} 
+                                    className="closeModalButton"
+                                >
+                                    Close
+                                </Button>
+                            </Col>
+                        </Row>
+                    </Container>
                 </Modal.Footer>
             </Modal>
         </>

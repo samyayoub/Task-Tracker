@@ -244,20 +244,20 @@ h3  {
 
 .tagBtnWithText {
   display: inline-block;
-  /* background-color: var(--backgroundColor); */
   color: var(--txtColor);
   width: 1.5em;
   margin-right: 1em;
+  margin-left: 1em;
   height: auto;
+  font-weight: 400;
 }
 
 .tagContainer {
   display: block;
   text-align: center;
   width: auto;
-  margin: 0.25em;
-  margin-bottom: 0.5em;
-  padding: 0.25em;
+  margin: 0.1em;
+  padding-left: 0.5em;
   border-radius: 15px;
 }
 
