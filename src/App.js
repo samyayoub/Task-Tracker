@@ -7,9 +7,6 @@ import { ThemeProvider, useTheme } from "./context/ThemeContext";
 function App() {
   const {theme, toggleTheme} = useTheme();
   const chooseTheme = (theme === 'lightTheme' ? 'lightTheme' : 'darkTheme');
-  
-  console.log(`theme: ${theme}`)
-  // console.log(`chooseTheme ${chooseTheme}`)
 
   return (
     <div>
