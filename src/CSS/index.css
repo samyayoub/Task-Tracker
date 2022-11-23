@@ -245,7 +245,7 @@ h3  {
 .tagBtnWithText {
   display: inline-block;
   color: var(--txtColor);
-  width: 1.5em;
+  width: 1em;
   margin-right: 1em;
   margin-left: 1em;
   height: auto;
@@ -256,11 +256,12 @@ h3  {
   display: block;
   text-align: center;
   width: auto;
-  margin: 0.1em;
-  padding-left: 0.5em;
+  margin: 0.5em;
+  padding-left: 0.55em;
   border-radius: 15px;
 }
 
 .tagContainer:hover {
   background-color: #E8C547;
+  font-weight: 600;
 }

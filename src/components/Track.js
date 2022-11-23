@@ -115,8 +115,7 @@ export default function Track() {
                             </Col>
                         </Row>
                         <Container 
-                            fluid="sm" 
-                            className="mx-auto containerModal"
+                            className="mx-auto containerModal container-fluid"
                         >
                             <div className="mx-auto">
                                 <p class="modalTxt" id="durationTxt">
@@ -125,7 +124,7 @@ export default function Track() {
                                 <Row className="align-items-center rowModal">
                                     <Col xs={true}>
                                         <button 
-                                            className="addAndSubtractTimeBtn" 
+                                            className="addAndSubtractTimeBtn col-md-4" 
                                             variant="light" 
                                             onClick={subtract15Minutes}
                                         >
@@ -135,12 +134,12 @@ export default function Track() {
                                             />
                                         </button>
                                     </Col>
-                                    <Col xs={true}>
-                                        <p>{task.duration} minutes</p>
+                                    <Col xs={true} className="text-center">
+                                        <p className="col-md-4">{task.duration} minutes</p>
                                     </Col>
                                     <Col xs={true}>
                                         <button 
-                                            className="addAndSubtractTimeBtn" 
+                                            className="addAndSubtractTimeBtn col-md-4" 
                                             variant="light" 
                                             onClick={add15Minutes}
                                         >
