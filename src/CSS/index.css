@@ -112,6 +112,47 @@ h3  {
   border-radius: 50%;
 }
 
+/* Authintcation page */
+.Auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Auth-form {
+  width: 420px;
+  box-shadow: 2px 0px 5px var(--btnShadowColor);
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: var(--backgroundColor);
+}
+
+.Auth-form-content {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.Auth-form-title {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 24px;
+  color: var(--txtColor);
+  font-weight: 800;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--txtColor);
+}
+
+.text-center, .text-center > a, span > a {
+  color: var(--txtColor);
+}
+
 /* Tracking Page Styling */
 .trackContainer {
   background-color: var(--backgroundColor);
