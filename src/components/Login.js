@@ -108,8 +108,7 @@ const Login = () => {
                             <p className="text-center">
                                 Need an Account?<br />
                                 <span className="line link-primary">
-                                    { /*put router link here */}
-                                    <a href="#">Sign up</a>
+                                    <a href="register">Sign up</a>
                                 </span>
                             </p>
 

@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar"
 import Track from "./components/Track"
 import Auth from "./components/Auth"
 import Login from './components/Login'
+import Register from './components/Register'
 
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
 
@@ -18,6 +19,7 @@ function App() {
       <ThemeProvider>
           <Routes>
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
           <header>
             <Navbar />
