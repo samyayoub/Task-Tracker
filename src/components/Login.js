@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect, useContext } from 'react';
 import AuthContext from "../context/AuthProvider";
+import { Link } from 'react-router-dom';
 
 import axios from '../api/axios';
 const LOGIN_URL = '/auth';
@@ -62,7 +63,7 @@ const Login = () => {
                     <h3>You are logged in</h3>
                     <br />
                     <p>
-                        <a href="#">Go to Home</a>
+                        <Link to="#">Go to Home</Link>
                     </p>
                 </section>
             ) : (
@@ -108,12 +109,12 @@ const Login = () => {
                             <p className="text-center">
                                 Need an Account?<br />
                                 <span className="line link-primary">
-                                    <a href="register">Sign up</a>
+                                    <Link to="/Register">Sign up</Link>
                                 </span>
                             </p>
 
                             <p className="text-center mt-2">
-                                Forgot <a href="#">password?</a>
+                                Forgot <Link to="#">password?</Link>
                             </p>
                         </div>
                     </form>
